@@ -1,0 +1,62 @@
+Task 2 – Breadth First Search Trace
+
+Graph adjacency lists:
+A: C B D
+B: A C E G
+C: A B D
+D: C A
+E: G F B
+F: G E
+G: F B
+
+Source node: A
+
+BFS uses a queue and visits all nearest neighbors first.
+
+Detailed trace:
+
+Start at A.
+Visit A.
+Queue: [A]
+
+Remove A from queue.
+A neighbors: C, B, D.
+Visit C, B, and D.
+Queue: [C, B, D]
+
+Remove C from queue.
+C neighbors: A, B, D.
+All are already visited.
+Queue: [B, D]
+
+Remove B from queue.
+B neighbors: A, C, E, G.
+A and C are already visited.
+Visit E and G.
+Queue: [D, E, G]
+
+Remove D from queue.
+D neighbors: C, A.
+All are already visited.
+Queue: [E, G]
+
+Remove E from queue.
+E neighbors: G, F, B.
+G and B are already visited.
+Visit F.
+Queue: [G, F]
+
+Remove G from queue.
+G neighbors: F, B.
+Both are already visited.
+Queue: [F]
+
+Remove F from queue.
+F neighbors: G, E.
+Both are already visited.
+Queue: []
+
+BFS is complete.
+
+BFS visiting order:
+A -> C -> B -> D -> E -> G -> F

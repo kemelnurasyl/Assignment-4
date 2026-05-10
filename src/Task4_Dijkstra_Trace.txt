@@ -1,0 +1,75 @@
+Task 4 – Shortest Path from Edinburgh to Dundee
+
+Road network edges:
+
+Edinburgh -- Glasgow = 70
+Edinburgh -- Stirling = 50
+Edinburgh -- Perth = 100
+Glasgow -- Stirling = 50
+Stirling -- Perth = 40
+Perth -- Dundee = 60
+
+Algorithm used: Dijkstra's shortest path algorithm.
+
+Start node: Edinburgh
+Destination node: Dundee
+
+Initial distances:
+
+Edinburgh = 0
+Glasgow = infinity
+Stirling = infinity
+Perth = infinity
+Dundee = infinity
+
+Step 1: Visit Edinburgh
+
+From Edinburgh:
+To Glasgow = 0 + 70 = 70
+To Stirling = 0 + 50 = 50
+To Perth = 0 + 100 = 100
+
+Updated distances:
+Edinburgh = 0
+Stirling = 50
+Glasgow = 70
+Perth = 100
+Dundee = infinity
+
+Step 2: Visit Stirling because it has the smallest distance, 50.
+
+From Stirling:
+To Glasgow = 50 + 50 = 100.
+Current Glasgow distance is 70, so no update.
+
+To Perth = 50 + 40 = 90.
+Current Perth distance is 100, so update Perth to 90.
+
+Updated distances:
+Edinburgh = 0
+Stirling = 50
+Glasgow = 70
+Perth = 90
+Dundee = infinity
+
+Step 3: Visit Glasgow because it has the next smallest distance, 70.
+
+From Glasgow:
+To Stirling = 70 + 50 = 120.
+Current Stirling distance is 50, so no update.
+
+No useful update from Glasgow.
+
+Step 4: Visit Perth because it has the next smallest distance, 90.
+
+From Perth:
+To Dundee = 90 + 60 = 150.
+Update Dundee to 150.
+
+Final shortest distance to Dundee = 150.
+
+Shortest path:
+Edinburgh -> Stirling -> Perth -> Dundee
+
+Total distance:
+50 + 40 + 60 = 150
